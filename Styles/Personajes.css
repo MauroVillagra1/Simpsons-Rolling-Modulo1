@@ -1,0 +1,129 @@
+/* Titulo */
+
+.TituloPersonajes {
+  text-align: center;
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: orangered;
+}
+
+/* Box */
+
+.Card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+/* Front */
+
+.MenuPersonajesFront {
+  position: relative;
+  list-style: none;
+  font-size: 30px;
+  display: grid;
+  grid-template-columns: 260px 260px 260px 260px 260px;
+  grid-template-rows: 400px 400px 400px 400px 400px;
+  z-index: 1;
+  transition: 1%;
+  object-fit: cover;
+  transform: rotateY(0);
+  place-items: center;
+  transform-style: preserve-3d;
+}
+
+.MenuPersonajesFront li {
+  box-sizing: border-box;
+  justify-content: center;
+  text-align: center;
+  width: 200px;
+  height: 300px;
+  background-color: orange;
+  align-items: center;
+  opacity: 100%;
+  border: solid 4px;
+  transform-style: preserve-3d;
+}
+
+.MenuPersonajesFront li a {
+  box-sizing: border-box;
+  width: 150px;
+  height: 200px;
+  color: black;
+  text-decoration: none;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  align-items: center;
+  backface-visibility: initial;
+}
+
+.MenuPersonajesFront li img {
+  box-sizing: border-box;
+  width: 80%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  backface-visibility: initial;
+}
+
+/* Back */
+
+.MenuPersonajesBack {
+  position: absolute;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 260px 260px 260px 260px 260px;
+  grid-template-rows: 400px 400px 400px 400px 400px;
+  z-index: 0;
+  place-items: center;
+  transform-style: preserve-3d;
+}
+
+.MenuPersonajesBack li {
+  box-sizing: border-box;
+  justify-content: center;
+  text-align: center;
+  width: 200px;
+  height: 300px;
+  background-color: rgb(255, 208, 0);
+  line-height: 15px;
+  font-size: 10px;
+  border: solid 4px;
+  transform-style: preserve-3d;
+}
+
+.Card .Back .MenuPersonajesBack .NombrePersonajes {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: black;
+}
+
+.MenuPersonajesBack li p {
+  box-sizing: border-box;
+  color: black;
+  text-decoration: none;
+  padding: 0;
+}
+
+.Card .Back .MenuPersonajesBack .TextPersonaje {
+  font-size: 12px;
+  padding: 10px;
+  border-top: solid 2px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  justify-content: left;
+  text-align: left;
+}
+
+/* Funcionalidades */
+
+.MenuPersonajesFront li:hover {
+  transition-duration: 3s;
+  transform: rotate3d(1, 1, -1, 180deg);
+  translate: 1000px;
+  opacity: 0;
+  backface-visibility: hidden;
+  transition-delay: 0.2s;
+  position: static;
+}

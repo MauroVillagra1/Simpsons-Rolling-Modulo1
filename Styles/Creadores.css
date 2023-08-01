@@ -1,0 +1,94 @@
+.TituloCreadores {
+  text-align: center;
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: orangered;
+}
+
+.Cards {
+  position: relative;
+  display: grid;
+  grid-template-columns: 260px 260px 260px 260px 260px;
+  grid-template-rows: 550px 550px 550px;
+}
+
+.Card {
+  position: relative;
+  width: 230px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  text-align: center;
+  margin: auto;
+}
+
+.Front {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: 1%;
+  display: flex;
+}
+
+.Front img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-style: preserve-3d;
+  top: 0;
+  left: 0;
+  border-style: solid;
+}
+
+.Contenedor {
+  width: 250px;
+  height: 500px;
+  margin: 0;
+  transform-style: preserve-3d;
+}
+
+.Cards .Nombre {
+  position: relative;
+  width: 100%;
+  height: 75px;
+  transform-style: preserve-3d;
+  font-size: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  box-shadow: 20px;
+  text-align: center;
+  z-index: 10;
+  top: 0%;
+}
+
+.Back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+
+  transform: rotateY(180deg);
+}
+
+.Back p {
+  margin: 10px;
+  text-align: left;
+}
+
+.Card:hover > .Front {
+  transition: 1s;
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+}
+
+.Card:hover > .Back {
+  transition: 1s;
+  transform: rotateY(0);
+}
